@@ -1,0 +1,48 @@
+ <div class="container">
+        <form (ngSubmit)=" onSubmit(myForm)" #myForm="ngForm">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <input [(ngModel)]="employee.id" type="text" name="id" class="form-control" id="id" aria-describedby="idHelp" placeholder="Employee ID">
+           
+
+            <label for="name">Employee Name</label>
+            <input [(ngModel)]="employee.name" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your employee name">
+           
+
+            <label for="email">Employee Email</label>
+            <input [(ngModel)]="employee.email" type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+              placeholder="Enter your employee email">
+            
+
+          <label for="email">Employee City</label>
+            <input [(ngModel)]="employee.city" type="text" name="city" class="form-control" id="city" 
+              placeholder="Enter your employee city">
+            
+
+          </div>
+            <button class="btn btn-primary mb-4" [disabled]="isbutton" >Create employee</button>
+        </form>
+      
+    
+
+<table class="table" >
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.city}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+
+  </div>
