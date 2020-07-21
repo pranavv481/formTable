@@ -35,8 +35,8 @@
     </tr>
   </thead>
   <tbody>
-  <tr>
-  <td *ngIf="users.length==0">No Data Available</td>
+  <tr *ngIf="users.length==0">
+  No Data Available
   </tr>
     <tr *ngFor="let user of users">
       <th scope="row">{{user.id}}</th>
