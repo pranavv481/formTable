@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-  isbutton = true;
+  isbutton = false;
   employee: { id; name; city; email } = {
     id: null,
     name: '',
@@ -18,9 +18,7 @@ export class UsersComponent implements OnInit {
   users: any = [];
   constructor(private userservice: UserService) {}
 
-  ngOnInit(): void {
-    // this.getUser();
-  }
+  ngOnInit(): void {}
 
   getUser() {
     this.userservice.getData().subscribe((data) => {
@@ -29,10 +27,7 @@ export class UsersComponent implements OnInit {
     });
   }
   onSubmit(formObject) {
-    console.log(formObject.value);
-    this.isbutton = false;
+    //console.log(formObject.value);
     this.users.push(formObject.value);
-
-    // this.getUser();
   }
 }
